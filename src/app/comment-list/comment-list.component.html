@@ -1,0 +1,27 @@
+<mat-form-field *ngIf="!level">
+  <input
+    matInput
+    type="text"
+    placeholder="Type your search query"
+    (keyup)="searchComments($event.target.value)"
+  />
+</mat-form-field>
+
+<div [class]="level ? 'nested-list' : ''">
+  <div *ngFor="let comment of comments">
+    <div *ngIf="comment.isVisible">
+      <app-comment-item
+        [comment]="comment"
+        [deleteComment]="deleteComment"
+      ></app-comment-item>
+
+      <app-comment-list
+        *ngIf="comment.children.length || comment.showReplyForm"
+        [comments]="comment.children"
+        [level]="level + 1"
+      ></app-comment-list>
+    </div>
+  </div>
+
+  <app-comment-form [onSubmit]="addComment"></app-comment-form>
+</div>

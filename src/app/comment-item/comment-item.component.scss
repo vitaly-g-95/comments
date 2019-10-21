@@ -1,0 +1,12 @@
+.comment {
+  margin-bottom: 16px;
+  animation: fadeInUp 0.4s;
+
+  .mat-card-actions {
+    text-align: right;
+
+    .mat-mini-fab:not(:first-child) {
+      margin-left: 8px;
+    }
+  }
+}

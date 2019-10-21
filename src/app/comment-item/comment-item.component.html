@@ -1,0 +1,26 @@
+<mat-card class="comment">
+  <mat-card-content>
+    <div class="text-truncate">
+      {{comment.text}}
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      *ngIf="!comment.children.length"
+      mat-mini-fab
+      color="primary"
+      (click)="comment.showReplyForm = !comment.showReplyForm"
+    >
+      <mat-icon>reply</mat-icon>
+    </button>
+
+    <button
+      mat-mini-fab
+      color="warn"
+      (click)="deleteComment(comment)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

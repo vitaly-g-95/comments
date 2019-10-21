@@ -1,0 +1,29 @@
+.comment-form {
+  margin-bottom: 16px;
+  animation: fadeInDown 0.4s;
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-flex {
+    align-items: flex-end;
+  }
+
+  .mat-form-field-outline {
+    background: #fff;
+  }
+
+  .mat-form-field-suffix {
+    top: 0 !important;
+    margin: 1em 0 0.75em 0.75em;
+  }
+
+  textarea {
+    min-height: 40px;
+  }
+}
